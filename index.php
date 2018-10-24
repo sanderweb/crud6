@@ -35,7 +35,12 @@
                     <td><?=formataData($pessoa["nascimento"]) ?></td>
                     <td><?=$pessoa["telefone"]?></td>
                     <td><?=$pessoa["endereco"]?></td>
-                    <td>Editar</td>
+                    <td> 
+                        <form name="alterar" action="alterar.php" method="post">
+                            <input type="hidden" name="id" value="<?=$pessoa["id"] ?>" />
+                            <input type="submit" value="Editar" name="editar">
+                        </form>
+                    </td>
                     <td>Excluir</td>
                 </tr> 
                    

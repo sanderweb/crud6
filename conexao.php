@@ -30,6 +30,16 @@ function selectAllPessoa(){
     return $grupo;
 }
 
+function selectIdPessoa($id){
+    $banco = abrirBanco();
+    $sql = "SELECT * FROM pessoa WHERE id=".$id;
+    $resultado = $banco->query($sql);
+    $banco->close();
+    $pessoa = mysqli_fetch_assoc($resultado);
+    
+    return $pessoa;
+}
+
 function voltarIndex(){
 
     header("Location:index.php");
