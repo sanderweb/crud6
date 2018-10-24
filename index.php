@@ -31,7 +31,8 @@
                 
                 <tr>
                     <td><?=$pessoa["nome"]?></td>
-                    <td><?=$pessoa["nascimento"]?></td>
+                    <!-- FUNCTION ALINHA DATA E HORA 2 PASSO DD/MM/AAAA-->
+                    <td><?=formataData($pessoa["nascimento"]) ?></td>
                     <td><?=$pessoa["telefone"]?></td>
                     <td><?=$pessoa["endereco"]?></td>
                     <td>Editar</td>
@@ -39,15 +40,19 @@
                 </tr> 
                    
             <?php } ?>    
-        </tbody>
+        </tbody>       
         
     </table>
     
+    
+    <!-- FUNCTION ALINHA DATA E HORA 1 PASSO DD/MM/AAAA-->    
     <?php 
-        function formatoData($data){
+        function formataData($data){
             $array = explode("-", $data);
             // $data = 2016-04-14
-            // $array[0]= 2016, $array[1] = 04 e $array[2]
+            // $array[0] = 2016, $array[1] = 04 e $array[2] = 14
+            $novaData = $array[2]."/".$array[1]."/".$array[0];
+            return $novaData;
         }
     
     ?>
